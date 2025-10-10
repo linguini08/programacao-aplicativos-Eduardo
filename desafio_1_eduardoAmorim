@@ -1,0 +1,84 @@
+package desafio_1_eduardo.amorim;
+import java.util.Scanner;
+/**
+ *
+ * @author Aluno
+ */
+public class Desafio_1_eduardoAmorim {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner (System.in);
+        boolean executando = true;
+        
+        //Saldo da pessoa
+        double saldoR = 100.00;
+        double saldoD = 0.00;
+        
+        //Menu
+        while (executando){
+        System.out.println("\n== CAIXA RAPIDO ==");
+        System.out.println("1- Saldo");
+        System.out.println("2- Deposito");
+        System.out.println("3- Extrato");
+        System.out.println("4- Simular Emprestimo");
+        System.out.println("5- Comprar Dolar");
+        System.out.println("0- Sair");
+        System.out.println("Escolha uma opcao");
+        
+        int opcao = entrada.nextInt();
+        entrada.nextLine();
+        
+        switch (opcao){
+            //Saldo
+            case 1:
+                System.out.printf("saldo em Reais: R$ %.2f\n", saldoR);
+                System.out.printf("saldo em Dolares: US %.2f\n", saldoD);
+                System.out.print("Deseja voltar ao CAIXA RAPIDO (V) ou encerrar o programa (E)?");
+                String escolha = entrada.nextLine();
+            if (escolha.equalsIgnoreCase("E")){
+                executando = false;
+                System.out.println("Programa encerrado");
+                }
+                break;
+            //Deposito
+            case 2:
+                System.out.print("Digite o valor que deseja depositar (em Reais):");
+                        double valorDeposito = entrada.nextDouble();
+                        entrada.nextLine();
+                        
+                        if (valorDeposito > 0){
+                            saldoR += valorDeposito;
+                            System.out.printf("Deposito de R$ %2.2f realizado com sucesso. \n", valorDeposito);
+                            System.out.printf("Novo saldo: R$ %.2f\n", saldoR);
+                        }
+                        else{
+                            System.out.println("Valor invalido. O deposito deve ser maior que 0.");                     
+                        }
+                break;
+            //Extrato
+            case 3:
+                
+                break;
+            //Simular Emprestimo
+            case 4:
+                
+                break;
+            //Comprar dolar
+            case 5:
+                
+                break;
+            //Sair
+            case 0:
+                System.out.println("Saindo do Programa..");
+                executando = false;
+                break;
+            default:
+                System.out.println("Opção invalida. Tente novamente.");
+      }       
+    }
+  }
+}
+    
